@@ -1,0 +1,16 @@
+{
+  "name": "president-petitions-api",
+  "version": "1.0.0",
+  "description": "API Wrapper / API Client for President Petitions",
+  "main": "index.js",
+  "repository": "https://github.com/junhoyeo/president-petitions-api",
+  "author": "JunhoYeo <hanaro0704@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.25",
+    "typescript": "^3.9.7"
+  }
+}
