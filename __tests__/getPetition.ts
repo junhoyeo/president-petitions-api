@@ -1,8 +1,8 @@
 import getPetition from '../lib/getPetition';
 import { IPetition } from '../lib/models/Petitions';
 
-describe('', () => {
-  test('', async () => {
+describe('Get petition information from petitionID', () => {
+  test('Query petition', async () => {
     const petition: IPetition = await getPetition(590341);
     expect(petition.status).toEqual('청원진행중');
     expect(petition.title)
@@ -14,5 +14,10 @@ describe('', () => {
       finishedAt: expect.any(String),
     }));
     expect(typeof petition.article).toBe('string');
+  });
+
+  test('Query finished petition', async () => {
+    const petition: IPetition = await getPetition(588752);
+    expect(petition.status).toEqual('답변완료');
   });
 });
