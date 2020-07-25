@@ -27,4 +27,18 @@ describe('Get petitions', () => {
       })
     );
   });
+
+  test('Get petitions with agreement order', async () => {
+    const { petitions }: IGetPetitionListReturn = await getPetitionList({
+      isOrderedByAgreementCount: true,
+    });
+    expect(Array.isArray(petitions));
+  });
+
+  test('Get petitions from next page', async () => {
+    const { currentPage }: IGetPetitionListReturn = await getPetitionList({
+      page: 2,
+    });
+    expect(currentPage).toEqual(2);
+  });
 });

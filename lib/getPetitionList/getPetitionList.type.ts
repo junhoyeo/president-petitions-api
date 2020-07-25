@@ -1,6 +1,7 @@
 import { IPetitionsListItem } from '../models/Petitions';
 
 export interface IGetPetitionListProps {
+  page?: number;
   isOrderedByAgreementCount?: boolean;
 }
 

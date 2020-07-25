@@ -1,4 +1,4 @@
-import client from '../client';
+import client, { createFormData } from '../client';
 import {
   IGetPetitionListProps,
   IGetPetitionListReturn,
@@ -8,8 +8,13 @@ import {
 const PETITIONS_LIST_API_URL = 'https://www1.president.go.kr/api/petitions/list';
 
 export default async function getPetitionList({
+  page = 1,
   isOrderedByAgreementCount = false,
 }: IGetPetitionListProps = {}): Promise<IGetPetitionListReturn> {
+  const formData = createFormData({
+    page,
+    order: isOrderedByAgreementCount ? 2 : 1,
+  });
   const {
     data: {
       status,
@@ -17,7 +22,13 @@ export default async function getPetitionList({
       page: currentPage,
       item: petitions,
     },
-  }: IPetitionsAPIListResponse = await client.get(PETITIONS_LIST_API_URL);
+  }: IPetitionsAPIListResponse = await client({
+    url: PETITIONS_LIST_API_URL,
+    method: 'POST',
+    data: formData,
+    headers: formData.getHeaders(),
+  });
+
   if (status !== 'ok') {
     throw new Error(`Status is not 'OK'`);
   }
@@ -36,7 +47,7 @@ export default async function getPetitionList({
       finished: finishedAt,
     }) => {
       const id = Number(idAsString);
-      const agreementCount = Number(agreementCountAsString);
+      const agreementCount = Number(agreementCountAsString.replace(/,/g, ''));
       return {
         id,
         number,
