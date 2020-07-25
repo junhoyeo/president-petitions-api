@@ -1,7 +1,6 @@
-import getPetitions, {
-  IGetPetitionsReturn,
-  IPetitionsListItem,
-} from './getPetitions';
+import getPetitions from './getPetitions';
+import { IGetPetitionsReturn } from './getPetitions/getPetitions.type';
+import { IPetitionsListItem } from './models/Petitions';
 
 describe('Get petitions', () => {
   test('Get petitions', async () => {

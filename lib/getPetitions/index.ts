@@ -1,48 +1,11 @@
-import client from './client';
+import client from '../client';
+import {
+  IGetPetitionsProps,
+  IGetPetitionsReturn,
+  IPetitionsAPIListResponse,
+} from './getPetitions.type';
 
 const PETITIONS_LIST_API_URL = 'https://www1.president.go.kr/api/petitions/list';
-
-export interface IPetitionsListItem {
-  id: number;
-  number: number;
-  title: string;
-  category: string;
-  provider: string;
-  agreementCount: number;
-  createdAt: string;
-  finishedAt: string;
-}
-
-export interface IGetPetitionsProps {
-  isOrderedByAgreementCount?: boolean;
-}
-
-export interface IGetPetitionsReturn {
-  totalPages: number;
-  currentPage: number;
-  petitions: IPetitionsListItem[];
-}
-
-export interface IPetitionsAPIListItem {
-  id: string;
-  paging_id: number;
-  title: string;
-  agreement: string;
-  category: string;
-  created: string;
-  finished: string;
-  provider: string;
-}
-
-export interface IPetitionsAPIListResponse {
-  data: {
-    status: string;
-    total: string;
-    page: number;
-    paging: string;
-    item: IPetitionsAPIListItem[];
-  };
-}
 
 export default async function getPetitions({
   isOrderedByAgreementCount = false,
