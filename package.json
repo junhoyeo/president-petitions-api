@@ -4,13 +4,39 @@
   "description": "API Wrapper / API Client for President Petitions",
   "main": "index.js",
   "repository": "https://github.com/junhoyeo/president-petitions-api",
-  "author": "JunhoYeo <hanaro0704@gmail.com>",
+  "author": "Junho Yeo <hanaro0704@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "axios": "^0.19.2"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.7",
     "@types/node": "^14.0.25",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.3",
     "typescript": "^3.9.7"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.ts?$": "ts-jest",
+      "\\.js?$": "babel-jest"
+    },
+    "testRegex": "(\\.|/)(test|spec)\\.(jsx?|tsx?)$",
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    },
+    "testEnvironment": "node"
   }
 }
