@@ -8,3 +8,16 @@ export interface IPetitionsListItem {
   createdAt: string;
   finishedAt: string;
 }
+
+export interface IPetition {
+  id: number;
+  status: string,
+  title: string,
+  agreementCount: number,
+  information: {
+    category: string,
+    createdAt: string,
+    finishedAt: string,
+  },
+  article: string,
+}

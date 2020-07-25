@@ -33,7 +33,7 @@
       "\\.ts?$": "ts-jest",
       "\\.js?$": "babel-jest"
     },
-    "testRegex": "(\\.|/)(test|spec)\\.(jsx?|tsx?)$",
+    "testRegex": "/__tests__/.*.(js|ts)?$",
     "globals": {
       "ts-jest": {
         "enableTsDiagnostics": true
