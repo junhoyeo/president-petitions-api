@@ -1,15 +1,15 @@
 import client from '../client';
 import {
-  IGetPetitionsProps,
-  IGetPetitionsReturn,
+  IGetPetitionListProps,
+  IGetPetitionListReturn,
   IPetitionsAPIListResponse,
-} from './getPetitions.type';
+} from './getPetitionList.type';
 
 const PETITIONS_LIST_API_URL = 'https://www1.president.go.kr/api/petitions/list';
 
-export default async function getPetitions({
+export default async function getPetitionList({
   isOrderedByAgreementCount = false,
-}: IGetPetitionsProps = {}): Promise<IGetPetitionsReturn> {
+}: IGetPetitionListProps = {}): Promise<IGetPetitionListReturn> {
   const {
     data: {
       status,

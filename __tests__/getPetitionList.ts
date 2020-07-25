@@ -1,5 +1,5 @@
-import getPetitions from '../lib/getPetitions';
-import { IGetPetitionsReturn } from '../lib/getPetitions/getPetitions.type';
+import getPetitionList from '../lib/getPetitionList';
+import { IGetPetitionListReturn } from '../lib/getPetitionList/getPetitionList.type';
 import { IPetitionsListItem } from '../lib/models/Petitions';
 
 describe('Get petitions', () => {
@@ -8,7 +8,7 @@ describe('Get petitions', () => {
       totalPages,
       currentPage,
       petitions,
-    }: IGetPetitionsReturn = await getPetitions();
+    }: IGetPetitionListReturn = await getPetitionList();
 
     expect(totalPages).toBeGreaterThan(1000);
     expect(currentPage).toEqual(1);

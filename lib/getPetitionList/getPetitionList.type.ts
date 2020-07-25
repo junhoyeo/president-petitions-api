@@ -1,10 +1,10 @@
 import { IPetitionsListItem } from '../models/Petitions';
 
-export interface IGetPetitionsProps {
+export interface IGetPetitionListProps {
   isOrderedByAgreementCount?: boolean;
 }
 
-export interface IGetPetitionsReturn {
+export interface IGetPetitionListReturn {
   totalPages: number;
   currentPage: number;
   petitions: IPetitionsListItem[];
