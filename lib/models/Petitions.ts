@@ -16,6 +16,7 @@ export interface IPetition {
   agreementCount: number,
   information: {
     category: string,
+    provider: string,
     createdAt: string,
     finishedAt: string,
   },

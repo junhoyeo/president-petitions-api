@@ -14,7 +14,12 @@ export default async function getPetition(petitionID: number): Promise<IPetition
       .text()
       .trim()
       .replace(/,/g, ''));
-  const [category, createdAt, finishedAt] = document('ul.petitionsView_info_list > li')
+  const [
+    category,
+    createdAt,
+    finishedAt,
+    providerWithAnonymousID,
+  ] = document('ul.petitionsView_info_list > li')
     .toArray()
     .map((informationItemReference) => {
       const informationItem = document(informationItemReference);
@@ -24,6 +29,7 @@ export default async function getPetition(petitionID: number): Promise<IPetition
         .replace(fieldName, '')
         .trim();
     });
+  const provider = providerWithAnonymousID.split('-')[0];
   const article = document('div.View_write')
     .text()
     .split('\n')
@@ -38,6 +44,7 @@ export default async function getPetition(petitionID: number): Promise<IPetition
     agreementCount,
     information: {
       category,
+      provider,
       createdAt,
       finishedAt,
     },
