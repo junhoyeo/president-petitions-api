@@ -12,6 +12,7 @@ describe('Get petition information from petitionID', () => {
       category: expect.any(String),
       createdAt: expect.any(String),
       finishedAt: expect.any(String),
+      provider: expect.any(String),
     }));
     expect(typeof petition.article).toBe('string');
   });

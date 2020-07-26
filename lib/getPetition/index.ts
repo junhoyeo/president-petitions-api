@@ -29,7 +29,9 @@ export default async function getPetition(petitionID: number): Promise<IPetition
         .replace(fieldName, '')
         .trim();
     });
-  const provider = providerWithAnonymousID.split('-')[0];
+  const provider = providerWithAnonymousID
+    .split('-')[0]
+    .trim();
   const article = document('div.View_write')
     .text()
     .split('\n')

@@ -62,6 +62,7 @@
   "agreementCount": 724248,
   "information": {
     "category": "안전/환경",
+    "provider": "naver",
     "createdAt": "2020-07-03",
     "finishedAt": "2020-08-02"
   },

@@ -10,7 +10,7 @@ describe('Get petitions', () => {
       petitions,
     }: IGetPetitionListReturn = await getPetitionList();
 
-    expect(totalPetitions).toBeGreaterThan(1000);
+    expect(totalPetitions).toBeGreaterThan(500);
     expect(currentPage).toEqual(1);
 
     expect(Array.isArray(petitions));
