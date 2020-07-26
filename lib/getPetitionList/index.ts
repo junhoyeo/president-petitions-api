@@ -18,7 +18,7 @@ export default async function getPetitionList({
   const {
     data: {
       status,
-      total: totalPagesAsString,
+      total: totalPetitionsAsString,
       page: currentPage,
       item: petitions,
     },
@@ -32,10 +32,10 @@ export default async function getPetitionList({
   if (status !== 'ok') {
     throw new Error(`Status is not 'OK'`);
   }
-  const totalPages = Number(totalPagesAsString);
+  const totalPetitions = Number(totalPetitionsAsString);
   return {
-    totalPages,
     currentPage,
+    totalPetitions,
     petitions: petitions.map(({
       id: idAsString,
       title,

@@ -6,8 +6,8 @@ export interface IGetPetitionListProps {
 }
 
 export interface IGetPetitionListReturn {
-  totalPages: number;
   currentPage: number;
+  totalPetitions: number;
   petitions: IPetitionsListItem[];
 }
 

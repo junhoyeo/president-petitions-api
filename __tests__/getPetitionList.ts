@@ -5,12 +5,12 @@ import { IPetitionsListItem } from '../lib/models/Petitions';
 describe('Get petitions', () => {
   test('Get petitions', async () => {
     const {
-      totalPages,
+      totalPetitions,
       currentPage,
       petitions,
     }: IGetPetitionListReturn = await getPetitionList();
 
-    expect(totalPages).toBeGreaterThan(1000);
+    expect(totalPetitions).toBeGreaterThan(1000);
     expect(currentPage).toEqual(1);
 
     expect(Array.isArray(petitions));
